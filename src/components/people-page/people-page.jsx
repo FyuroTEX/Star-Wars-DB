@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SwapiService from '../../services/swapi-service';
 import ErrorIndicator from '../error-indicator/error-indicator';
 import ItemList from '../item-list/item-list';
-import PersonDetails from '../person-details/person-details';
+import ItemDetails from '../item-details/';
 import Row from '../row';
 import ErrorBoundry from '../error-boundry';
 import './people-page.css';
@@ -38,7 +38,7 @@ export default class PeoplePage extends Component {
       </ItemList>
     );
     const personDetails = (
-      <PersonDetails personId={this.state.selectedPerson} />
+      <ItemDetails itemId={this.state.selectedPerson} />
     );
 
     return (

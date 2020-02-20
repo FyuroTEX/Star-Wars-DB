@@ -2,35 +2,35 @@ import React, { Component } from 'react';
 import SwapiService from '../../services/swapi-service';
 import Spinner from '../spinner';
 
-import './person-details.css';
+import './item-details.css';
 
-export default class PersonDetails extends Component {
+export default class ItemDetails extends Component {
 
     swapiService = new SwapiService();
     state = {
-        person: null,
+        item: null,
         loading: false
     };
     componentDidMount() {
         this.updatePerson();
     };
-    
+
     componentDidUpdate(prevProps) {
-        if (this.props.personId !== prevProps.personId) {
+        if (this.props.itemId !== prevProps.itemId) {
             this.updatePerson();
             this.setState({ loading: true });
         };
     };
 
     updatePerson() {
-        const { personId } = this.props;
-        if (!personId) {
+        const { itemId } = this.props;
+        if (!itemId) {
             return;
         };
-        this.swapiService.getPerson(personId)
-            .then((person) => {
+        this.swapiService.getPerson(itemId)
+            .then((item) => {
                 this.setState({
-                    person,
+                    item,
                     loading: false
                 });
             });
@@ -38,10 +38,10 @@ export default class PersonDetails extends Component {
 
 
     render() {
-        if (!this.state.person) {
+        if (!this.state.item) {
             return <span>Select a persone from a list</span>
         };
-        const { id, name, gender, birthYear, eyeColor } = this.state.person;
+        const { id, name, gender, birthYear, eyeColor } = this.state.item;
         if (this.state.loading) {
             return <Spinner />
         };

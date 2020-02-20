@@ -1,3 +1,7 @@
 .spinner-border{
-    margin: auto;
+    margin: 30px auto;
+    display: block;
+}
+.sr-only{
+    margin: 30px auto;
 }
