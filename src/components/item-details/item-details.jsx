@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SwapiService from '../../services/swapi-service';
 import Spinner from '../spinner';
 
 import './item-details.css';
@@ -19,7 +18,7 @@ export {
 
 export default class ItemDetails extends Component {
 
-    swapiService = new SwapiService();
+   
     state = {
         item: null,
         loading: false,
@@ -72,12 +71,12 @@ export default class ItemDetails extends Component {
                     <ul className="list-group list-group-flush">
                         {
                             React.Children.map(this.props.children, (child) => {
-                                return React.cloneElement(child, {item});
+                                return React.cloneElement(child, { item });
                             })
                         }
                     </ul>
                 </div>
             </div>
-        )
-    }
-}
+        );
+    };
+};
