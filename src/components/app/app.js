@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../header';
 import ErrorBoundry from '../error-boundry';
-
+// import SwapiService from '../../services/swapi-service';
 import {
   PersonList,
   PlanetList,
@@ -10,16 +10,20 @@ import {
   PlanetDetails,
   StarshipDetails
 } from '../sw-components';
+import { SwapiServiceProvider } from '../swapi-service-context';
+
+import DummySwapiService from '../../services/dummy-swapi-service';
 
 
 import './app.css';
 
 export default class App extends Component {
-
+  swapiService = new DummySwapiService();
   render() {
 
     return (
       <ErrorBoundry>
+        <SwapiServiceProvider value={this.swapiService}>
         <div className="stardb-app app-body">
           <Header />
           <PlanetDetails itemId={3}/>
@@ -34,8 +38,9 @@ export default class App extends Component {
            
 
 
-        </div>
+          </div>
+        </SwapiServiceProvider>
       </ErrorBoundry>
     );
-  }
-}
+  };
+};
