@@ -27,7 +27,7 @@ export default class DummySwapiService {
       diameter: '12.742 km'
     },
     {
-      id: 2,
+      id: 15,
       name: 'Venus [TEST DATA]',
       population: 'not known',
       rotationPeriod: '243 days',
@@ -37,7 +37,7 @@ export default class DummySwapiService {
 
   _starships = [
     {
-      id: 1,
+      id: 15,
       name: 'USS Enterprise [TEST DATA]',
       model: 'NCC-1701-C',
       manufacturer: 'Northrop Grumman Shipbuilding',
