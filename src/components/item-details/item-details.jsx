@@ -18,7 +18,7 @@ export {
 
 export default class ItemDetails extends Component {
 
-   
+
     state = {
         item: null,
         loading: false,
@@ -32,8 +32,10 @@ export default class ItemDetails extends Component {
         if (this.props.itemId !== prevProps.itemId ||
             this.props.getData !== prevProps.getData ||
             this.props.getImageUrl !== prevProps.getImageUrl) {
-            this.updatePerson();
+
             this.setState({ loading: true });
+            this.updatePerson();
+
         };
     };
 
@@ -58,7 +60,7 @@ export default class ItemDetails extends Component {
             return <span>Select a persone from a list</span>
         };
         const { item, image } = this.state;
-        const {name} = item;
+        const { name } = item;
         if (this.state.loading) {
             return <Spinner />
         };
