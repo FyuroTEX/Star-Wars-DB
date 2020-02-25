@@ -19,6 +19,15 @@ export default class RandomPlanet extends Component {
   static defaultProps = {
     updateInterval: 7500
   };
+  static propTypes = {
+    updateInterval: (props, propsName, componentName) => {
+      const value = props[propsName];
+      if (typeof value === 'number' && !isNaN(value)) {
+        return null;
+      };
+      return new TypeError(`${componentName}: ${propsName} must be number`);
+    }
+  };
 
   componentDidMount() {
     const { updateInterval } = this.props;
