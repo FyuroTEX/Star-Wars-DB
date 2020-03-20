@@ -20,8 +20,8 @@ import './app.css';
 const Bground = () => {
   return (
     <>
-      <div class="stars"></div>
-      <div class="star-light"></div>
+      <div className="stars"></div>
+      <div className="star-light"></div>
     </>
   );
 };

@@ -18,7 +18,6 @@ export {
 
 export default class ItemDetails extends Component {
 
-
     state = {
         item: null,
         loading: false,
@@ -56,14 +55,14 @@ export default class ItemDetails extends Component {
 
 
     render() {
+        if (this.state.loading) {
+            return <Spinner />
+        };
         if (!this.state.item) {
             return <span>Select a persone from a list</span>
         };
         const { item, image } = this.state;
         const { name } = item;
-        if (this.state.loading) {
-            return <Spinner />
-        };
         return (
             <div className="person-details card">
                 <img className="person-image"
