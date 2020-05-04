@@ -15,10 +15,10 @@ const withData = (View, getData) => {
       if (getData !== prevProps.getData) {
         this.update();
       }
-    }
+    };
     componentDidMount() {
       this.update();
-    }
+    };
     update() {
       this.setState({
         loading: true,
@@ -38,7 +38,7 @@ const withData = (View, getData) => {
             loading: false,
           });
         });
-    }
+    };
 
     render() {
       const { data, loading, error } = this.state;
