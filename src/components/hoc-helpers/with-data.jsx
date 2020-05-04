@@ -2,42 +2,43 @@ import React, { Component } from 'react';
 import ErrorIndicator from '../error-indicator';
 import Spinner from '../spinner';
 
-
-const withData = (View) => {
+const withData = (View, getData) => {
   return class extends Component {
-
     state = {
       data: null,
       loading: true,
-      error: false
+      error: false,
     };
 
     componentDidUpdate(prevProps) {
-      if (this.props.getData !== prevProps.getData) {
+      const { getData } = this.props;
+      if (getData !== prevProps.getData) {
         this.update();
-      };
-    };
+      }
+    }
     componentDidMount() {
       this.update();
-    };
+    }
     update() {
       this.setState({
         loading: true,
-        error: false
-      })
-      this.props.getData()
+        error: false,
+      });
+      const { getData } = this.props;
+      getData()
         .then((data) => {
           this.setState({
             data,
-            loading: false
+            loading: false,
           });
-        }).catch(() => {
+        })
+        .catch(() => {
           this.setState({
             error: true,
-            loading: false
+            loading: false,
           });
         });
-    };
+    }
 
     render() {
       const { data, loading, error } = this.state;

@@ -12,6 +12,9 @@ const ErrorIndicator = () => {
         something has gone terribly wrong
       </span>
       <span>
+        or <span className="boom"><a href="https://swapi.co/">API</a></span> does not work
+      </span>
+      <span>
         (but we already sent droids to fix it)
       </span>
     </div>
