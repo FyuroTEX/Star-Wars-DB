@@ -8,7 +8,6 @@ export default class DummySwapiService {
       birthYear: 'long ago',
       eyeColor: 'dark brown'
     },
-
     {
       id: 2,
       name: 'Frodo Baggins [TEST DATA]',
@@ -27,7 +26,7 @@ export default class DummySwapiService {
       diameter: '12.742 km'
     },
     {
-      id: 15,
+      id: 2,
       name: 'Venus [TEST DATA]',
       population: 'not known',
       rotationPeriod: '243 days',
@@ -61,8 +60,8 @@ export default class DummySwapiService {
     return this._planets;
   };
 
-  getPlanet = async () => {
-    return this._planets[0]
+  getPlanet = async (id) => {
+    return this._planets.find(item => item.id === id);
   };
 
   getAllStarships = async () => {
