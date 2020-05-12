@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import DummySwapiService from '../../services/dummy-swapi-service';
 import SwapiService from '../../services/swapi-service';
+
 import ErrorBoundry from '../error-boundry';
 import Header from '../header';
 import {
@@ -83,8 +85,7 @@ export default class App extends Component {
                   render={() => <SecretPage isLoggedIn={isLoggedIn} />} />
 
                 <Route render={() => <h2 className='text-center'>Page not found</h2>} />
-
-
+                {/* or redirect to pages <Redirect to='/' /> */}
               </Switch>
             </div>
 

@@ -7,7 +7,7 @@ const StarshipPage = ({ history }) => {
 
     return (
         <StarshipList
-            onItemSelected={(itemId) => { history.push(itemId); }} />
+            onItemSelected={(id) => { history.push(id); }} />
     );
 
 };
